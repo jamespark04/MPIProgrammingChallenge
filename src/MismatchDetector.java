@@ -265,6 +265,7 @@ public class MismatchDetector {
 					System.out.println("No mismatches in this log file.");
 				}
 				else {
+					System.out.println("Mismatches detected");
 					for (String m: mismatches) {
 						System.out.println(m);
 					}
