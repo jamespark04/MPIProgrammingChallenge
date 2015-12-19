@@ -92,8 +92,15 @@ public class MismatchDetector {
 	}
 	
 	/**
-	 * This method will attempt to create a message object from a 
-	 * line from the MPI log file
+	 * This method will parse a valid send/receive log message
+	 * and either populate the send/receive maps 
+	 * or if the input message matches a message in the
+	 * opposite map, this function will remove the corresponding message
+	 * from the opposite map,
+	 * thereby implicitly confirming the one to one relationship.
+	 * If it is not a valid send/receive log message,
+	 * any appropriate exceptions will be printed
+	 * and nothing will be done with the maps
 	 * @param s - the string to be parsed
 	 */
 	private static void parseLogLine(String s) {
